@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,8 +24,12 @@
     "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "firebase": "^9.6.1",
+    "needle": "^3.0.0",
+    "request": "^2.88.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "twitter": "^1.7.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -36,7 +40,9 @@
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
     "@types/jasmine": "~3.6.0",
+    "@types/needle": "^2.5.2",
     "@types/node": "^12.11.1",
+    "@types/request": "^2.48.7",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

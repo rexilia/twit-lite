@@ -1,2 +1,26 @@
-<p>home works!</p>
-<ng-container *ngIf="allData | async as data">{{ data }}</ng-container>
+<div class="sticky bg-blue-900 text-blue-50 p-3 border-l border-slate-500 top-0">See Edits</div>
+<ng-container *ngIf="allData; else loading">
+    <ng-container *ngFor="let data of allData;">
+        <div class="border border-slate-300 rounded-md m-5 px-3 py-1">
+
+            <div>Edited by: {{ data.name }}</div>
+
+            <div class="text-sm italic text-slate-400">{{ data.date }}</div>
+            <div *ngIf="data.changed" class="flex items-center">
+                <div class="pr-2">Number of characters changed:</div>
+                <div *ngIf="data.changed.startsWith('+')" class="text-green-800 text-sm"> {{ data.changed }}
+                </div>
+                <div *ngIf="data.changed.startsWith('-')" class="text-red-800 text-sm"> {{ data.changed }}</div>
+            </div>
+            <div>Size: {{ data.size }}</div>
+            <a href='https://en.wikipedia.org/wiki/Special:Contributions/{{ data.uri }}' target="_blank">
+                <div class="cursor-pointer">View Edit</div>
+            </a>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-template #loading>
+    <div class="flex h-90 m-20">
+        <div class="spinner"></div>
+    </div>
+</ng-template>

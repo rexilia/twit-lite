@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "twit-lite": {
+      "hosting": {
+        "explore": [
+          "twit-lite"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "twit-lite"
+  }
+}
