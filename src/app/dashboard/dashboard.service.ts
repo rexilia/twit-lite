@@ -14,6 +14,6 @@ export class DashboardService {
   constructor(private http: HttpClient) {}
 
   async getUserTweets() {
-    return this.http.get('http://localhost:3000/results');
+    return this.http.get('https://fast-waters-17490.herokuapp.com/results');
   }
 }
